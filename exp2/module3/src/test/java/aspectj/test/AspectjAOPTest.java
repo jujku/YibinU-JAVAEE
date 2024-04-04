@@ -10,7 +10,7 @@ public class AspectjAOPTest {
         ApplicationContext appCon = new ClassPathXmlApplicationContext("aspectj-config.xml");
         TestDao testDaoAdvice = (TestDao)appCon.getBean("testDao");
         testDaoAdvice.save();
-        System.out.println("====================");
+        System.out.println("======================");
         testDaoAdvice.modify();
         System.out.println("=====================");
         testDaoAdvice.delete();
