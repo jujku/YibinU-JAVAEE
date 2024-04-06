@@ -16,10 +16,12 @@ public class lab3_2 {
     @RequestMapping(value = "login",method = RequestMethod.POST, produces = "application/json;charset=utf-8")
     @CrossOrigin(origins = "*")
     public Map login(@RequestBody UserForm userForm) {
-        if (userForm.getUname().equals("辛禹杉") && userForm.getUpass().equals("123456")) {
+        if (userForm.getUname().equals("辛禹杉") && userForm.getUpass().equals("210104116")) {
             Map<String, Object> data = new HashMap<>();
-            data.put("user","辛禹杉");
+            data.put("user",userForm.getUname());
+            data.put("upass",userForm.getUpass());
             data.put("loginStatus","1");
+            data.put("message","登录成功");
             return data;
 
         } else {
@@ -32,6 +34,14 @@ public class lab3_2 {
     @RequestMapping(value = "register",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     @CrossOrigin(origins = "*")
     public Map register(@RequestBody UserForm userForm){
-        if(userForm.getUname().equals())
+        if(userForm.getUname().equals("辛禹杉") && userForm.getUpass().equals("210104116")){
+            Map<String,Object> data = new HashMap<>();
+            data.put("message","注册成功");
+            return data;
+        }else{
+            Map<String,Object> data = new HashMap<>();
+            data.put("message","注册失败");
+            return data;
+        }
     }
 }
