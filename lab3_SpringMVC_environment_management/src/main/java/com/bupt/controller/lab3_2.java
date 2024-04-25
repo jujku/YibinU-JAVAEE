@@ -1,13 +1,11 @@
 package com.bupt.controller;
 
 import com.bupt.pojo.UserForm;
-import org.springframework.ui.Model;
+import com.bupt.pojo.LoginStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/user")
@@ -44,4 +42,19 @@ public class lab3_2 {
             return data;
         }
     }
+    @RequestMapping(value = "check",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
+    @CrossOrigin(origins = "*")
+    public Map check(@RequestBody LoginStatus loginStatus){
+        System.out.println(loginStatus.getLoginstatus());
+        if(loginStatus.getLoginstatus().equals("1")){
+            Map<String,Object> data = new HashMap<>();
+            data.put("message","权限检验成功，你已登录");
+            return data;
+        }else{
+            Map<String,Object> data = new HashMap<>();
+            data.put("message","权限检验失败，你未登录");
+            return data;
+        }
+    }
+
 }
