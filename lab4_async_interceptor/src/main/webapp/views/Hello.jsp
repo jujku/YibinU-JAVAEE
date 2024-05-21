@@ -1,3 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,5 +10,7 @@
 </head>
 <body>
 <h1 class="title">210104116 辛禹杉</h1>
+
+
 </body>
 </html>
