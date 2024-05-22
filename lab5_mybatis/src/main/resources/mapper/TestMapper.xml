@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bupt.mapper.TestMapper">
+    <insert id="addUser">
+        INSERT INTO `test`(`name`, `password`) values(#{name}, #{password})
+    </insert>
+    <delete id="deleteUser">
+        DELETE FROM `test` WHERE id = #{id}
+    </delete>
+    <update id="updateUser">
+        UPDATE `test`
+        SET name = #{name}, password = #{password}
+        WHERE id = #{id}
+    </update>
+    <select id="getUserById" resultType="com.bupt.enity.User">
+        SELECT * FROM `test` WHERE id = #{id}
+    </select>
+</mapper>
